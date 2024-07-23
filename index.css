@@ -1,0 +1,916 @@
+/* VIKAS YADAV */
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+RO:wght@100..400&display=swap');
+:root{
+  --text-color:black;
+  --border-color: black;
+  --background-dark: #ecf4f8;
+  --background-light:#dee4e7;
+  --box-shadow:black;
+}
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+  }
+  /* universal media querry
+  to be used for all cases from certificates */
+  @media (max-width:768px) {
+    #certificateContainer{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  @media (min-width:769px) {
+    #certificateContainer{
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  /* end of media querry */
+  /* ... */
+  body{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-family: monospace;
+    background-color: var(--background-light);
+  }
+  /*heading orientation for samsung*/
+
+  /*main heading*/
+  #mainHeading{
+    font-family: "Playwrite RO", monospace ;
+    animation: neonSign 2s linear alternate infinite;
+    font-size: x-large;
+  } 
+  /*main Heading animantion*/
+  @keyframes neonSign {
+    0%{
+      text-shadow: 2px 1px 1px #0000FF;
+    }
+    100%{
+      text-shadow: -2px 1px 1px #FF0000;
+    }
+  }
+  /*full header properties*/
+  .header{
+    z-index: 1000;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+  
+    background-color: var(--background-dark);
+    animation: neonSignbox 2s linear alternate infinite;
+  }
+  /*defing logo*/
+ .logo{
+    font-size: 1em;
+    font-weight: bolder;
+    font-family: "Playwrite RO", monospace ;
+    border: 2px var(--border-color) solid;
+    width: fit-content;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    background-image:linear-gradient(to right,#0000FF, #FF0000);
+    animation: neonSignbox 2s linear alternate infinite;
+  }
+  #rotator1{
+    border: 1px plum solid;
+    border-radius: 10px;
+    background-color: plum;
+    padding: 10px;
+    animation: rotator1A 8s linear infinite;
+  }
+  #rotator2{
+    border: 1px aquamarine solid;
+    border-radius: 10px;
+    background-color: aquamarine;
+    padding: 5px;
+    animation: rotator2A 4s linear infinite;
+  }
+  #logoText{
+    position: relative;
+    text-shadow: 2px 1px 5px #0000FF;
+    animation: textRotator  8s linear infinite;
+  }
+  /*logo animation*/
+  @keyframes rotator1A {
+    0%{
+      rotate: 0deg;
+      box-shadow: 2px 1px 1px #0000FF;
+    }
+    50%{
+      rotate: -180deg;
+      box-shadow: -2px 1px 1px #FF0000;
+    }
+    100%{
+      rotate: -360deg;
+      box-shadow: 2px 1px 1px #0000FF;
+    }
+    
+  }
+  @keyframes rotator2A {
+    0%{
+      rotate: 0deg;
+      box-shadow: 2px 1px 1px #0000FF;
+    }
+    50%{
+      rotate: 180deg;
+      box-shadow: -2px 1px 1px #FF0000;
+    }
+    100%{
+      rotate: 360deg;
+      box-shadow: 2px 1px 1px #0000FF;
+    }
+    
+  }
+  @keyframes textRotator {
+    0%{
+      rotate: 0deg;
+      text-shadow: 2px 1px 1px #0000FF;
+    }
+    50%{
+      rotate: -180deg;
+      text-shadow: -2px 1px 1px #FF0000;
+    }
+    100%{
+      rotate: -360deg;
+      text-shadow: 2px 1px 1px #0000FF;
+    } 
+  }
+  /*making navigation list and menu for ipad and samsung*/
+  #nav{
+    width: fit-content;
+    height:fit-content;
+    padding: 10px;
+  }
+  /*small
+  devices */
+  @media (max-width:768px) {
+    #headingContainer{display: none;}
+    #toggeleNav{
+      width: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+      flex-wrap: nowrap;
+    }
+    .hamburger{
+      display: block;
+      position: relative;
+      width: 40px;
+      height: 5px;
+      padding: 2px;
+      background-color: plum;
+      border: 1px plum solid;
+      border-radius: 20px;
+      margin: 5px;
+      transition: all 0.5s linear;
+    }
+    /*transition for the hamburger icon*/
+    #nav{
+      right: 30px;
+      gap: 10px;
+    }
+    #dropDown{
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      right: 0px;
+      margin-top: 10px;
+      display: none;
+      border: 1px var(--border-color) solid;
+      border-radius: 10px;
+      background-color: plum;
+      animation: neonSignbox 2s linear alternate infinite;
+    }
+    #nav:hover{
+      .hamburger{background-color: aqua;border:aqua}
+      #bar2{ opacity: 0; }
+      #bar1{
+        transform:translateY(10px) rotate(45deg);
+      }
+      #bar3{
+        transform: translateY(-10px) rotate(-45deg);
+      }
+      #dropDown{
+        display: flex;
+      }
+      }
+      .dropList{
+        text-decoration: none;
+        color: var(--text-color);
+        padding: 2px 20px; 
+        font-family:"Playwrite RO", monospace;
+        transition: all 0s linear ;
+        border-radius: 10px;
+      }
+      .dropList:hover{
+        background-color: aqua;
+      }
+    }
+    /*nav bar for
+     pc and laptops*/
+    @media (min-width:769px) {
+      #toggeleNav{
+        width: fit-content;
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+      }
+      #headingContainer{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .hamburger{
+        display: block;
+        position: relative;
+        width: 40px;
+        height: 5px;
+        padding: 2px;
+        background-color: plum;
+        border: 1px plum solid;
+        border-radius: 20px;
+        margin: 5px;
+        transition: all 0.5s linear;
+      }
+      /*transition for the hamburger icon*/
+      #nav{
+        right: 30px;
+        gap: 10px;
+      }
+      #dropDown{
+        margin-top: 10px;
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        align-items: center;
+        border: 1px var(--border-color) solid;
+        background-color: var(--background-dark);
+        box-shadow: -5px 0px 10px  var(--box-shadow);
+        border-radius: 20px;
+        padding: 10px;
+        height: fit-content;
+        width: 200px;
+        right: 0px;
+        display: none;
+      }
+      #nav:hover{
+        .hamburger{background-color: aqua;border:aqua}
+        #bar2{ opacity: 0;}
+        #bar1{
+          transform:translateY(10px) rotate(45deg);
+        }
+        #bar3{
+          transform: translateY(-10px) rotate(-45deg);
+        }
+        #dropDown{
+          display: flex;
+        }
+    }
+    .dropList{
+      position: relative;
+      text-decoration: none;
+      font-family: "Playwrite RO", monospace ;
+      border: 1px black solid;
+      border-radius: 5px;
+      padding: 20px 30px; 
+      margin-top: 20px;
+      margin-bottom: 20px;
+      animation: neonSignbox 2s linear alternate infinite;
+      transition: all 0.5s linear;
+    }
+    .dropList:hover{
+      background-color: plum;
+      transform: translateY(-10px)
+    }
+  }
+  /*styling checkbox to make it toggle button for theme*/
+  #toggleContainer{
+    margin-right:10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+ .toggleSwitch{
+  position:relative;
+  display: inline-block;
+  width: 40px;
+  height: 25px;
+  background-color: gray;
+  border-radius: 20px;
+ }
+ .checkbox{
+  display: none;
+ }
+ .toggleSwitch::after{
+  content: "";
+  position: absolute;
+  top: 2.5px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  transition: all 0.5s ;
+ }
+.checkbox:checked + .toggleSwitch::after{
+   left: 18px;
+   background-color: black;
+ }
+ /*now heading is over
+ we start with main part*/
+/*homepage with all animation*/
+
+#grid1{
+  animation: grid1 10s;
+}
+@keyframes grid1 {
+  0%{
+    opacity: 0;
+  }
+  60%{
+      opacity: 0;
+      transform: translatex(-10px);
+  }
+  100%{
+    opacity: 1;
+    transform: translatex(0px);
+  } 
+}
+#grid2{
+  font-size: 40px;
+  text-shadow: 2px 0px;
+  font-family:"Playwrite RO",monospace ;
+  animation: neonSign 2s linear alternate infinite;
+}
+#hello{
+  animation: hello 4s linear;
+}
+@keyframes hello {
+  0%{
+    opacity: 0;
+    transform: translatey(-10px);
+  }
+  50%{
+    opacity: 0;
+    transform: translatey(-10px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translatey(0px);
+  }
+}
+  #world{
+    animation:world 10s;
+  }
+  @keyframes world {
+    0%{
+      opacity: 0;
+    }
+    60%{
+        opacity: 0;
+        transform: translatex(10px);
+    }
+    100%{
+      opacity: 1;
+      transform: translatex(0px);
+    } 
+  }
+#grid3{
+  font-size: x-large;
+  margin-top: 0px;
+  animation: grid3 10s linear;
+}
+@keyframes grid3 {
+  0%{
+    opacity: 0;
+  }
+  60%{
+      opacity: 0;
+      transform: translatey(10px);
+  }
+  100%{
+    opacity: 1;
+    transform: translatey(0px);
+  } 
+}
+#name b{
+  font-size: xx-large;
+  animation: neonSign 2s linear alternate infinite;
+}
+#socialLinks{
+  display: flex;
+  text-decoration: none;
+  gap: 10px;
+  color: black;
+}
+#downloadResume a{
+  text-decoration: none;
+  color: black;
+}
+#downloadResume{
+  border: 1px black solid;
+  padding: 5px;
+  margin-top: 20px;
+  margin-left: 40px;
+  border-radius: 10px;
+  width: fit-content;
+  animation: neonSignbox 2s linear alternate infinite;
+  background-color: whitesmoke;
+  transition: all 0.5s linear;
+}
+#downloadResume:hover{
+  background-color: aquamarine;
+  transform: translateY(-10px);
+}
+#introLine{
+  margin-top: 10px;
+}
+#socialLinks{
+  margin-left: 40px;
+  margin-top: 20px;
+}
+#home{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-top: 50px;
+}
+@media (max-width:768px) {
+  #home{
+    flex-direction:column;
+  }
+
+}
+@media (min-width:769px) {
+  #home{
+    flex-direction:row;
+    gap: 200px;
+  }
+}
+#profile1{
+  width: 350px;
+  border-radius: 20px;
+  animation: neonSignbox 2s linear alternate infinite;
+}
+#intro{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* end of home page */
+/* section seperator styling */
+
+.sectionSeperator{
+  position: relative;
+  border-radius: 50px;
+  width: 60%;
+  height: 5px;
+  left: 20%;;
+  background-image: linear-gradient(to right,plum, aquamarine);
+  animation: neonSignbox 2s linear alternate infinite;
+}
+@keyframes neonSignbox {
+  0%{
+    box-shadow: 2px 1px 2px #0000FF;
+  }
+  100%{
+    box-shadow: -2px 0px 15px #FF0000;
+  }
+}
+/* start of about section */
+.sectionHeading{
+  position: relative;
+  width: 50%;
+  left: 25%;
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  animation: neonSign 2s linear alternate infinite;
+}
+#aboutContainer{
+  display: grid;
+}
+@media (max-width:768px) {
+  #aboutContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .aboutgrid{
+    margin-top: 40px;
+  }
+  #about1,#about2{
+    border-radius: 10px;
+  }
+}
+@media (min-width:769px) {
+  #aboutContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+#profile2{position: relative;}
+#profile2 img{
+  width: 300px;
+  height: 533px;
+}
+#about1,#about2{
+  border: 1px black solid;
+  width: fit-content;
+  height: 533px;
+}
+#about1{
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+#verticalBar{
+  height: 80%;
+  width: 2px;
+  background-image: linear-gradient(to top, aquamarine,plum);
+}
+#about1box1{
+  line-height: 40px;
+  text-align: end;
+  padding: 20px 0px 20px 20px;
+}
+#about1box2{
+  line-height: 40px;
+  padding: 20px 20px 20px 0px;
+}
+#about2{
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-weight: bolder;
+}
+#about2box1{
+  line-height: 30px;
+}
+#about2box1 button{
+  font-style: italic;
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.aboutgrid{
+  width: 300xp;
+  background-color: sk;
+  background-image: linear-gradient(to top,white, skyblue );
+  animation: neonSignbox 2s linear alternate infinite;
+}
+/* end of about secrtion styling */
+/* start of skills section styling */
+#skillsContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* different style for different screen sizes */
+@media (max-width:768px) {
+  #skillsBox{
+    width: 540px;
+  }
+}
+@media (min-width:769px) {
+  #skillsBox{
+    width: 760px;
+  }
+}
+#skillsBox{
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: fit-content;
+}
+/* outer circle */
+.circleBox1{
+  margin: 50px;
+  
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: neonSignbox 2s linear alternate infinite;
+  transition: all 0.5s linear;
+  cursor: pointer;
+}
+.circleBox1:hover{
+  transform: translatey(-10px);
+}
+/* inner circle */
+.circleBox2{
+  width: 80px;
+  height: 80px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  font-size: larger;
+  text-align: center;
+  animation: neonSignbox 2s linear alternate infinite;
+  background-color: var(--background-light);
+}
+/* styling all circular progress indicators */
+#javaBox1{
+  background-image: conic-gradient( purple 0deg, aqua 270deg,white 270deg);
+}
+#pythonBox1{
+  background-image: conic-gradient(purple 0deg, aqua 180deg,white 180deg);
+}
+#htmlBox1{
+  background-image: conic-gradient(purple 0deg, aqua 324deg,white 324deg);
+}
+#cssBox1{
+  background-image: conic-gradient(purple 0deg, aqua 216deg,white 216deg);
+}
+#tailwindBox1{
+  background-image: conic-gradient(purple 0deg, aqua 50deg,white 50deg);
+}
+#jsBox1{
+  background-image: conic-gradient(purple 0deg, aqua 18deg,white 18deg);
+}
+/* end of skill section */
+
+/* begining of certificate section */
+
+#certificateContainer{
+  display: flex;
+  position: relative;
+}
+.certificatebox{
+  transition: all 0.2s linear;
+  border: 1px black solid;
+  border-radius: 20px;
+  width: 200px;
+  height: 300px;
+  margin: 20px;
+  padding: 20px;
+  background-color: white;
+  background-image: linear-gradient(to bottom, white ,plum,aqua);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: neonSignbox 2s linear alternate infinite;
+}
+.certificateTitle{
+  font-weight: bolder;
+  font-size: x-large;
+}
+.certificateAbout{
+  margin: 20px;
+  font-weight: bolder;
+}
+.certificateSeperator{
+  border: 1px black solid;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+.certificatePopup{
+  position:absolute;
+  border: 1px black solid;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  width: 200px;
+  height: 0px;
+  font-size: xx-large;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to right,rgb(51, 5, 138),rgb(51, 5, 138),rgb(51, 5, 138),blue);
+  bottom: 0px;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  opacity: 0;
+}
+.certificatePopup a{
+  text-decoration: none;
+  color: white;
+}
+/* transition for view button to popup */
+.certificatebox:hover{
+  transform: translateY(-10px);
+  .certificatePopup{
+    opacity: 1;
+    height: 40px;
+  }
+}
+/* end of certificate section */
+/* begining of project section styling */
+#projectWrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#projectContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 1500px;
+  height: fit-content;
+  gap: 20px;
+}
+.projectBox{
+  position: relative;
+  border: 2px black solid;
+  border-radius: 20px;
+  width:300px;
+  height:200px;
+  margin: 0px;
+  padding: 0px;
+  animation: neonSignbox 2s linear alternate infinite;
+  transition: all 0.4s linear;
+}
+#projectBox1{
+  background-image: url(./basicHtml.png);
+}#projectBox2{
+  background-image: url(./basicCss.png);
+}
+#projectBox3{
+  background-image: url(./portfolio.png);
+}
+#projectBox4{
+  background-image: url(./weatherApp.png);
+}
+#projectBox5{
+  background-image: url(./amazonClone.png);
+}
+#projectBox6{
+  background-image: url(./youtubeClone.png);
+}
+.projectPopup{
+  position: absolute;
+  border: 1px black solid;
+  background-image: linear-gradient(to right,aqua,aqua,aqua,white);
+  width: 299px;
+  height: 0px;
+  left: -1px;
+  border-radius: 0px 0px 20px 20px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: x-large;
+  font-weight: bolder;
+  bottom: 0px;
+  opacity: 0;
+  cursor: pointer;
+  transition: all 0.4s linear;
+}
+.projectBox:hover{
+  transform: translatey(-10px);
+  .projectPopup{
+    opacity: 1;
+  height: 50px;
+  }
+}
+/* end of project section */
+/* beggining of contacts section styling */
+#contactContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.contactBox{
+  height:500px;
+  margin-bottom: 40px;
+}
+#contactBox2{
+  border: 1px black solid;
+  border-radius: 20px;
+}
+/* form */
+#contactBox2{
+  display: grid;
+  grid-template: " first last"
+  "email mobile"
+  "textarea textarea"
+  "textarea textarea"
+  "textarea textarea"
+  "textarea textarea"
+  "submit submit";
+  background-image:linear-gradient(to bottom,plum,plum,aqua,aqua ) ;
+  animation: neonSignbox 2s linear alternate infinite;
+}
+#firstName{
+  grid-area: first;
+}
+#lastName{
+  grid-area: last;
+}
+#email{
+  grid-area: email;
+}
+#mobile{
+  grid-area: mobile;
+}
+#querry{
+  grid-area: textarea;
+}
+#submit{
+  grid-area: submit;
+}
+.input{
+  border: 1px black solid;
+  border-radius: 20px;
+  width: 90%;
+  margin: 15px;
+  font-size: large;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #daeaf7;
+  transition: all 0.5s linear;
+}
+.input input{
+  height: 30px;
+}
+.input:hover{
+  animation: neonSignbox 2s linear alternate infinite;
+  background-color: beige;
+}
+#submit{
+  border: 1px black solid;
+  border-radius: 20px;
+  width: 90%;
+  margin: 15px;
+  font-size: large;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.5s linear;
+  background-color: #3373b0;
+}
+#submit:hover{
+  animation: neonSignbox 2s linear alternate infinite;
+  transform: translateY(-5px);
+}
+/* end of contact section styling */
+/* begining of footer styling */
+#mainFooter{
+  animation: neonSignbox 2s linear alternate infinite;
+  width: 100%;
+  height: 140px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.socialPhoto img{
+  height: 45px;
+  border-radius: 5px;
+  animation: neonSignbox 2s linear alternate infinite;
+  transition: all 1s linear;
+}
+.socialsHolder{
+  margin: 20px;
+  transition: all 1s linear;
+}
+.socialPhoto{
+  position: relative;
+  left: 0px;
+  top: 0px;
+  cursor: pointer;
+}
+.socialsHolder:hover{
+    transform: translatey(-10px);
+}
